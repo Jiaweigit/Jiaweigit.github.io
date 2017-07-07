@@ -1,174 +1,522 @@
-<!doctype html>
-<html lang="null">
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta content="yes" name="apple-mobile-web-app-capable">
-  <meta content="black" name="apple-mobile-web-app-status-bar-style">
-  <meta content="telephone=no" name="format-detection">
-  <meta name="keywords" content="undefined">
-  <meta name="description" content="null">
-  <meta name="author" content="John Doe">
+<!DOCTYPE html>
+<html >
+<head>
 
-  
-  <title>远程地址管理</title>
-  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
 
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/2017/06/24/远程地址管理/index.html">
-  <link rel="shortcut icon" href="/">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="undefined">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="John Doe" />
+
+
+
+<meta name="description" content="我们可以在每一个本地仓库中，将远程地址保存下来。 保存的方式是键值对的形式， 也就是说保存的地址可以有一个别名，那么以后在使用这个地址的时候，直接使用别名即可。 如何保存一个远程地址git remote add 别名 远程地址 显示所有已经保存的地址git remote origin的说明如果当前版本库，是通过git clone从远程仓库获取下来的，那么这个本地库会自动默认添加一个origin远程">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="远程地址管理">
+<meta property="og:url" content="http://yoursite.com/2017/06/24/远程地址管理/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我们可以在每一个本地仓库中，将远程地址保存下来。 保存的方式是键值对的形式， 也就是说保存的地址可以有一个别名，那么以后在使用这个地址的时候，直接使用别名即可。 如何保存一个远程地址git remote add 别名 远程地址 显示所有已经保存的地址git remote origin的说明如果当前版本库，是通过git clone从远程仓库获取下来的，那么这个本地库会自动默认添加一个origin远程">
+<meta property="og:updated_time" content="2017-06-24T13:40:54.162Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="远程地址管理">
+<meta name="twitter:description" content="我们可以在每一个本地仓库中，将远程地址保存下来。 保存的方式是键值对的形式， 也就是说保存的地址可以有一个别名，那么以后在使用这个地址的时候，直接使用别名即可。 如何保存一个远程地址git remote add 别名 远程地址 显示所有已经保存的地址git remote origin的说明如果当前版本库，是通过git clone从远程仓库获取下来的，那么这个本地库会自动默认添加一个origin远程">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>远程地址管理 | Hexo</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
 </head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">John Doe</a></h1>
+        </hgroup>
+
+        
+
+        
 
 
-  <body>
-    <aside class="aside">
-  <nav class="aside-menu">
-    <ul class="aside-list">
-      
         
-        <li class="aside-item"><i class="aside-menu-icon iconfont icon-wendang"></i><a href="/index.html" class="aside-menu-link" title="Home">Home</a></li>
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
         
-      
-        
-        <li class="aside-item"><i class="aside-menu-icon iconfont icon-wendang1"></i><a href="/archives/index.html" class="aside-menu-link" title="Archives">Archives</a></li>
-        
-      
-        
-        <li class="aside-item"><i class="aside-menu-icon iconfont icon-biaoqian1"></i><a href="/tags/index.html" class="aside-menu-link" title="Tags">Tags</a></li>
-        
-      
-        
-        <li class="aside-item"><i class="aside-menu-icon iconfont icon-lianjie"></i><a href="/links/index.html" class="aside-menu-link" title="Links">Links</a></li>
-        
-      
-        
-        <li class="aside-item"><i class="aside-menu-icon iconfont icon-guanyu"></i><a href="/about/index.html" class="aside-menu-link" title="About">About</a></li>
-        
-      
-        
-        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
-        
-      
-    </ul>
-  </nav>
 
-  <article class="aside-show">
-    
-      <form class="search-from" id="search-from">
-  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
-  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
-</form>
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
 
-      <article class="search-data" id="search-data">
-  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-houdongfangiconfont10"></i></button>
-
-  <div class="search-wrapper" id="search-wrapper"></div>
-</article>
-
-    
-    <div class="aside-show-wrapper">
-      <figure class="aside-avatar">
-        <img src="/img/avatar.png" alt="avatar" class="aside-avatar-img">
-        <figcaption class="aside-avatar-caption">
-          晨风明悟
-          
-          <strong class="aside-avatar-STRONG">个人博客</strong>
-          
-        </figcaption>
-      </figure>
-      <p class="aside-show-description">观诸次为道，存神于想思。</p>
-      <ul class="aside-show-info">
-        <li class="aside-show-item">
-          <a href="javascript: void(0);" class="aside-show-link" title="微信" target="_blank"><i class="aside-show-icon iconfont icon-iconfontweixin"></i></a>
-          <div class="aside-show-outside aside-show-outside_1">
-            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信">
-          </div>
-        </li>
-        <li class="aside-show-item"><a href="https://www.zhihu.com/people/chenfengmingwu/activities" class="aside-show-link" title="知乎" target="_blank"><i class="aside-show-icon iconfont icon-zhihu"></i></a></li>
-        <li class="aside-show-item"><a href="https://github.com/Sam618" class="aside-show-link" title="github" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
-        <li class="aside-show-item">
-          <a href="javascript: void(0);" class="aside-show-link" title="QQ" target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
-          <div class="aside-show-outside">
-            <img class="aside-show-IMG" src="/img/qq.png" alt="QQ">
-          </div>
-        </li>
-      </ul>
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
     </div>
-  </article>
-</aside>
-
-
-    <article class="main" id="main">
-      <article class="post min-height">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">John Doe</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">John Doe</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-远程地址管理" class="article article-type-post" itemscope itemprop="blogPost">
   
-  <header class="post-header">
+    <div class="article-meta">
+      <a href="/2017/06/24/远程地址管理/" class="article-date">
+      <time datetime="2017-06-24T13:30:10.000Z" itemprop="datePublished">2017-06-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-    <h1 class="post-title">远程地址管理</h1>
-    <p class="post-meta">
-      <span class="post-time">2017-06-24</span>
-      
-      <a href="/categories/远程地址管理/" title="远程地址管理" class="post-categories">远程地址管理</a>
-      
-      
-      <a href="/tags/前端/"" title="前端" class="post-tags"><i class="post-tags-icon iconfont icon-biaoqian"></i>前端</a>
-      
-    </p>
+      <input type="hidden" class="isFancy" />
     
-  </header>
-  <div class="post-content"><p>我们可以在每一个本地仓库中，将远程地址保存下来。</p>
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      远程地址管理
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/远程地址管理/">远程地址管理</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>我们可以在每一个本地仓库中，将远程地址保存下来。</p>
 <p>保存的方式是键值对的形式， 也就是说保存的地址可以有一个别名，那么以后在使用这个地址的时候，直接使用别名即可。</p>
 <h2 id="如何保存一个远程地址"><a href="#如何保存一个远程地址" class="headerlink" title="如何保存一个远程地址"></a>如何保存一个远程地址</h2><p>git remote add 别名 远程地址</p>
 <h2 id="显示所有已经保存的地址"><a href="#显示所有已经保存的地址" class="headerlink" title="显示所有已经保存的地址"></a>显示所有已经保存的地址</h2><p>git remote</p>
 <h2 id="origin的说明"><a href="#origin的说明" class="headerlink" title="origin的说明"></a>origin的说明</h2><p>如果当前版本库，是通过git clone从远程仓库获取下来的，那么这个本地库会自动默认添加一个origin远程地址，指向就是git clone 命令后面的那个远程地址</p>
-</div>
-    
-      <p class="post-copyright">若无特别说明，本文系原创，<a class="post-copyright-link" href="https://creativecommons.org/licenses/by/4.0/deed.zh" title="署名-非商业性使用 4.0 (CC BY-NC 4.0)" target="_blank">署名-非商业性使用 4.0 (CC BY-NC 4.0)</a>协议，转载文章请注明来自<a class="post-copyright-link" href="/" title="晨风明悟的个人博客" target="_blank">晨风明悟的个人博客</a>，或链接上原文地址：<a class="post-copyright-link" href="http://yoursite.com/2017/06/24/远程地址管理/" title="http://yoursite.com/2017/06/24/远程地址管理/" target="_blank">http://yoursite.com/2017/06/24/远程地址管理/</a></p>
 
       
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/06/24/远程地址管理/">远程地址管理</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">John Doe</a></p>
+        <p><span>发布时间:</span>2017-06-24, 21:30:10</p>
+        <p><span>最后更新:</span>2017-06-24, 21:40:54</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/24/远程地址管理/" title="远程地址管理">http://yoursite.com/2017/06/24/远程地址管理/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/06/24/远程地址管理/　　作者: John Doe" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
         
-<article class="comments">
-  <div id="SOHUCS" sid="远程地址管理"></div>
-  <script type="text/javascript">
-  	( function () {
-  		var appid = "cysXoaLrO",
-  		    conf = "d728bfac2289e4139bef3956efe4401f",
-      		width = window.innerWidth || document.documentElement.clientWidth;
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/06/25/远程仓库/">
+                    远程仓库
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/06/24/hello-world/">
+                    Hello World
+                </a>
+            </div>
+        
+    </nav>
 
-  		if ( width < 960 ) {
-    		window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});
-      }
-    } )();
-  </script>
-  <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
-</article>
-
-
-      
-      <div class="toc-wrapper">
-        <div class="toc-scroll">
-          <div class="toc-middle">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何保存一个远程地址"><span class="toc-text">如何保存一个远程地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示所有已经保存的地址"><span class="toc-text">显示所有已经保存的地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#origin的说明"><span class="toc-text">origin的说明</span></a></li></ol>
-          </div>
-        </div>
-      </div>
-    
   
 </article>
 
-      <footer class="footer">
-  <p class="footer-text">驱动于 <a href="https://hexo.io/zh-cn/" class="footer-link" title="Hexo">Hexo</a>，主题由 <a href="/about" class="footer-link" title="晨风明悟">晨风明悟</a> 设计移植而来</p>
-  <p class="footer-text">&copy; 2016 - 2017 <a href="/about" class="footer-link" title="晨风明悟">晨风明悟</a> 保留部分版权</p>
-  <p class="footer-text">苏ICP备17019692号-1</p>
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何保存一个远程地址"><span class="toc-number">1.</span> <span class="toc-text">如何保存一个远程地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示所有已经保存的地址"><span class="toc-number">2.</span> <span class="toc-text">显示所有已经保存的地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#origin的说明"><span class="toc-number">3.</span> <span class="toc-text">origin的说明</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"远程地址管理　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/06/25/远程仓库/" title="上一篇: 远程仓库">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/06/24/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/远程仓库/">远程仓库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/24/远程地址管理/">远程地址管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/24/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/20/字符串方法/">字符串方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/19/数组方法/">数组方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/正则表达式/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/05/我的第一篇博客/">我的第一篇博客-hexo搭建个人博客</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 John Doe
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
 </footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-    </article>
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
 
-    <script src="/js/to-top.js"></script>
-    <script src="/js/search.js"></script>
-  </body>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
 </html>
